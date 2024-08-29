@@ -22,6 +22,9 @@ mongoose.connect(process.env.MONGO_URI, {
   .catch((err) => console.log(err));
 
 // Define Routes
+app.use('/', async (req, res) => {
+  res.send('Spectrum Api Running...');
+});
 app.use('/api/survey', require('./routes/surveyRoutes'));
 
 // Start the server
